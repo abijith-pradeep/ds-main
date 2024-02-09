@@ -1,0 +1,21 @@
+Pseudocode For TF-IDF implementation in my project
+
+function tf(word,doc):
+      return count(word) in current doc/length(doc) #returns the the total frequency a particular
+#word occurs in a particular document. 
+
+function idf(word,corpus)
+     cnt=0
+     for sen in corpus:
+          if word in sen:
+               cnt+=1
+#the above loop counts the number of documents which contains the given word
+     return log(length(corpus)/cnt) #total documents divided by the cnt variable defined above
+
+Tweets# A list of tweets
+TF_IDF=[]
+for tweet in tweets:
+      for word in tweet:
+            TF_IDF.append(tf(word,tweet)*idf(word,tweets))
+print(TF_IDF)
+               
